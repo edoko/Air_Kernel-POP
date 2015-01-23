@@ -1,0 +1,2 @@
+kernel/drivers/sensor/gp2a_proximity.ko
+kernel/drivers/sensor/gp2a_light.ko
