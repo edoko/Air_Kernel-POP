@@ -25,7 +25,7 @@
 @ -include include/generated/autoconf.h -MD kernel/.bounds.s.d
 @ kernel/bounds.c -mlittle-endian -mcpu=cortex-a9 -mtune=cortex-a9 -marm
 @ -mapcs -mno-sched-prolog -mabi=aapcs-linux -mno-thumb-interwork
-@ -march=armv7-a -mfloat-abi=soft -mfpu=vfpv3-d16 -mtls-dialect=gnu
+@ -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=soft -mtls-dialect=gnu
 @ -auxbase-strip kernel/bounds.s -g -O2 -Wall -Wundef -Wstrict-prototypes
 @ -Wno-trigraphs -Werror=implicit-function-declaration -Wno-format-security
 @ -Wno-maybe-uninitialized -Wframe-larger-than=1024
@@ -493,8 +493,16 @@ foo:
 	.ascii	"PG_head\000"
 .LASF46:
 	.ascii	"__MAX_NR_ZONES\000"
-.LASF43:
-	.ascii	"ZONE_NORMAL\000"
+.LASF55:
+	.ascii	"GNU C 4.8.4 20141110 (prerelease) -mlittle-endian -"
+	.ascii	"mcpu=cortex-a9 -mtune=cortex-a9 -marm -mapcs -mno-s"
+	.ascii	"ched-prolog -mabi=aapcs-linux -mno-thumb-interwork "
+	.ascii	"-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=soft -mtls-"
+	.ascii	"dialect=gnu -g -O2 -fno-strict-aliasing -fno-common"
+	.ascii	" -fno-delete-null-pointer-checks -fno-dwarf2-cfi-as"
+	.ascii	"m -fno-stack-protector -fno-omit-frame-pointer -fno"
+	.ascii	"-optimize-sibling-calls -fno-strict-overflow -fcons"
+	.ascii	"erve-stack\000"
 .LASF29:
 	.ascii	"PG_mappedtodisk\000"
 .LASF12:
@@ -521,6 +529,8 @@ foo:
 	.ascii	"PG_swapcache\000"
 .LASF42:
 	.ascii	"zone_type\000"
+.LASF43:
+	.ascii	"ZONE_NORMAL\000"
 .LASF7:
 	.ascii	"long unsigned int\000"
 .LASF51:
@@ -575,16 +585,6 @@ foo:
 	.ascii	"PG_slub_frozen\000"
 .LASF53:
 	.ascii	"PCG_ACCT_LRU\000"
-.LASF55:
-	.ascii	"GNU C 4.8.4 20141110 (prerelease) -mlittle-endian -"
-	.ascii	"mcpu=cortex-a9 -mtune=cortex-a9 -marm -mapcs -mno-s"
-	.ascii	"ched-prolog -mabi=aapcs-linux -mno-thumb-interwork "
-	.ascii	"-march=armv7-a -mfloat-abi=soft -mfpu=vfpv3-d16 -mt"
-	.ascii	"ls-dialect=gnu -g -O2 -fno-strict-aliasing -fno-com"
-	.ascii	"mon -fno-delete-null-pointer-checks -fno-dwarf2-cfi"
-	.ascii	"-asm -fno-stack-protector -fno-omit-frame-pointer -"
-	.ascii	"fno-optimize-sibling-calls -fno-strict-overflow -fc"
-	.ascii	"onserve-stack\000"
 .LASF2:
 	.ascii	"short int\000"
 .LASF49:

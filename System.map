@@ -13546,7 +13546,7 @@ c028d660 T __lshrdi3
 c028d680 T memchr
 c028d6a0 T memcpy
 c028d9d0 T memmove
-c028dd40 T memset
+c028dd20 T memset
 c028de00 T __memzero
 c028de80 T __aeabi_lmul
 c028de80 T __muldi3

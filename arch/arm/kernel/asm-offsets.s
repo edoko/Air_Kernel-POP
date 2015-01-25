@@ -25,8 +25,8 @@
 @ -include include/generated/autoconf.h
 @ -MD arch/arm/kernel/.asm-offsets.s.d arch/arm/kernel/asm-offsets.c
 @ -mlittle-endian -mcpu=cortex-a9 -mtune=cortex-a9 -marm -mapcs
-@ -mno-sched-prolog -mabi=aapcs-linux -mno-thumb-interwork -march=armv7-a
-@ -mfloat-abi=soft -mfpu=vfpv3-d16 -mtls-dialect=gnu
+@ -mno-sched-prolog -mabi=aapcs-linux -mno-thumb-interwork -mcpu=cortex-a9
+@ -mfpu=vfpv3 -mfloat-abi=soft -mtls-dialect=gnu
 @ -auxbase-strip arch/arm/kernel/asm-offsets.s -g -O2 -Wall -Wundef
 @ -Wstrict-prototypes -Wno-trigraphs -Werror=implicit-function-declaration
 @ -Wno-format-security -Wno-maybe-uninitialized -Wframe-larger-than=1024
@@ -7723,16 +7723,6 @@ main:
 	.ascii	"nivcsw\000"
 .LASF100:
 	.ascii	"group_leader\000"
-.LASF756:
-	.ascii	"GNU C 4.8.4 20141110 (prerelease) -mlittle-endian -"
-	.ascii	"mcpu=cortex-a9 -mtune=cortex-a9 -marm -mapcs -mno-s"
-	.ascii	"ched-prolog -mabi=aapcs-linux -mno-thumb-interwork "
-	.ascii	"-march=armv7-a -mfloat-abi=soft -mfpu=vfpv3-d16 -mt"
-	.ascii	"ls-dialect=gnu -g -O2 -fno-strict-aliasing -fno-com"
-	.ascii	"mon -fno-delete-null-pointer-checks -fno-dwarf2-cfi"
-	.ascii	"-asm -fno-stack-protector -fno-omit-frame-pointer -"
-	.ascii	"fno-optimize-sibling-calls -fno-strict-overflow -fc"
-	.ascii	"onserve-stack\000"
 .LASF13:
 	.ascii	"__kernel_pid_t\000"
 .LASF476:
@@ -8907,6 +8897,16 @@ main:
 	.ascii	"prev\000"
 .LASF76:
 	.ascii	"rcu_read_unlock_special\000"
+.LASF756:
+	.ascii	"GNU C 4.8.4 20141110 (prerelease) -mlittle-endian -"
+	.ascii	"mcpu=cortex-a9 -mtune=cortex-a9 -marm -mapcs -mno-s"
+	.ascii	"ched-prolog -mabi=aapcs-linux -mno-thumb-interwork "
+	.ascii	"-mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=soft -mtls-"
+	.ascii	"dialect=gnu -g -O2 -fno-strict-aliasing -fno-common"
+	.ascii	" -fno-delete-null-pointer-checks -fno-dwarf2-cfi-as"
+	.ascii	"m -fno-stack-protector -fno-omit-frame-pointer -fno"
+	.ascii	"-optimize-sibling-calls -fno-strict-overflow -fcons"
+	.ascii	"erve-stack\000"
 .LASF579:
 	.ascii	"real_timer\000"
 .LASF447:
