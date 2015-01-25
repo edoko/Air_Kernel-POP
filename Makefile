@@ -371,6 +371,7 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 			 -Wno-maybe-uninitialized \
 		   -fno-delete-null-pointer-checks \
 			 -mcpu=cortex-a9 -mtune=cortex-a9
+
 KBUILD_AFLAGS_KERNEL :=
 KBUILD_CFLAGS_KERNEL :=
 KBUILD_AFLAGS   := -D__ASSEMBLY__
