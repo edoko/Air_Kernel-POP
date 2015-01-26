@@ -116,9 +116,6 @@ static void register_page_bootmem_info_section(unsigned long start_pfn)
 	struct mem_section *ms;
 	struct page *page, *memmap;
 
-	if (!pfn_valid(start_pfn))
-		return;
-
 	section_nr = pfn_to_section_nr(start_pfn);
 	ms = __nr_to_section(section_nr);
 
@@ -746,13 +743,8 @@ do_migrate_range(unsigned long start_pfn, unsigned long end_pfn)
 			goto out;
 		}
 		/* this function returns # of failed pages */
-#ifndef CONFIG_DMA_CMA
 		ret = migrate_pages(&source, hotremove_migrate_alloc, 0,
-								true, true);
-#else
-		ret = migrate_pages(&source, hotremove_migrate_alloc, 0,
-								true, true, 0);
-#endif
+							true, MIGRATE_SYNC);
 		if (ret)
 			putback_lru_pages(&source);
 	}

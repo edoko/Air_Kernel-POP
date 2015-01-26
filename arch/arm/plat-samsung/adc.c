@@ -163,8 +163,12 @@ int s3c_adc_start(struct s3c_adc_client *client,
 
 	BUG_ON(!adc);
 
-	if (client->is_ts && adc->ts_pend)
+	spin_lock_irqsave(&adc->lock, flags);
+
+	if (client->is_ts && adc->ts_pend) {
+		spin_unlock_irqrestore(&adc->lock, flags);
 		return -EAGAIN;
+	}
 
 	if (atomic_xchg(&client->running, 1)) {
 		WARN(1, "%s: %p is already running\n", __func__, client);
