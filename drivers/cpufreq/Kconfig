@@ -159,6 +159,12 @@ config CPU_FREQ_DEFAULT_GOV_HOTPLUG
 
          If in doubt, say N.
 
+config CPU_FREQ_DEFAULT_GOV_LULZACTIVEQ
+        bool "lulzactiveq"
+        select CPU_FREQ_GOV_LULZACTIVEQ
+        help
+          'lulzactiveq' - hotplug mechanism added in lulzactive
+
 endchoice
 
 config CPU_FREQ_GOV_PERFORMANCE
@@ -330,6 +336,12 @@ config CPU_FREQ_GOV_HOTPLUG
          'ondemand' instead.
 
          If in doubt, say N.
+
+config CPU_FREQ_GOV_LULZACTIVEQ
+        tristate "'lulzactiveq' cpufreq governor"
+        depends on CPU_FREQ
+        help
+          'lulzactiveq' - hotplug mechanism added in lulzactive
 
 config CPU_FREQ_GOV_SLP
 	tristate "'slp' cpufreq policy governor"
