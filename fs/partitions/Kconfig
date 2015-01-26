@@ -249,3 +249,8 @@ config SYSV68_PARTITION
 	  partition table format used by Motorola Delta machines (using
 	  sysv68).
 	  Otherwise, say N.
+
+config PARTITION_SUPPORT_STLOG
+	bool "Enable storage log"
+	depends on BLOCK && PROC_STLOG
+	default y

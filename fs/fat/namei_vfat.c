@@ -514,7 +514,8 @@ xlate_to_uni(const unsigned char *name, int len, unsigned char *outname,
 	int charlen;
 
 	if (utf8) {
-		*outlen = utf8s_to_utf16s(name, len, (wchar_t *)outname);
+		*outlen = utf8s_to_utf16s(name, len, UTF16_HOST_ENDIAN,
+				(wchar_t *) outname, FAT_LFN_LEN + 2);
 		if (*outlen < 0)
 			return *outlen;
 		else if (*outlen > FAT_LFN_LEN)
@@ -1061,6 +1062,12 @@ static const struct inode_operations vfat_dir_inode_operations = {
 	.rename		= vfat_rename,
 	.setattr	= fat_setattr,
 	.getattr	= fat_getattr,
+#ifdef CONFIG_FAT_VIRTUAL_XATTR
+	.setxattr	= fat_setxattr,
+	.getxattr	= fat_getxattr,
+	.listxattr	= fat_listxattr,
+	.removexattr	= fat_removexattr,
+#endif
 };
 
 static void setup(struct super_block *sb)
