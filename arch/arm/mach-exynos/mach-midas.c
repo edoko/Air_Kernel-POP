@@ -71,9 +71,6 @@
 #if defined(CONFIG_SF2_NFC_TAG)
 #include <linux/nfc/nfc_tag.h>
 #endif
-#ifdef CONFIG_DMA_CMA
-#include <linux/dma-contiguous.h>
-#endif
 
 #include <asm/mach/arch.h>
 #include <asm/mach-types.h>

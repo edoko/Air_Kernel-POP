@@ -48,10 +48,6 @@ struct stmpe811_platform_data stmpe811_pdata;
 #include <linux/delay.h>
 #include <linux/bootmem.h>
 
-#ifdef CONFIG_DMA_CMA
-#include <linux/dma-contiguous.h>
-#endif
-
 #include <asm/mach/arch.h>
 #include <asm/mach-types.h>
 #include <asm/setup.h>
