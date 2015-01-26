@@ -1347,8 +1347,8 @@ dhd_preinit_ioctls(dhd_pub_t *dhd)
 	if (strstr(fw_path, "apsta") != NULL) {
 		uint rand_mac;
 
-		srandom32((uint)jiffies);
-		rand_mac = random32();
+		prandom_seed((uint)jiffies);
+		rand_mac = prandom_u32();
 		iovbuf[0] = 0x02;              /* locally administered bit */
 		iovbuf[1] = 0x1A;
 		iovbuf[2] = 0x11;
